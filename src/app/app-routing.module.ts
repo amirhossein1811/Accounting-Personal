@@ -7,6 +7,7 @@ const routes: Routes = [
   {path:'login',component:LoginComponent},
   {path:'dashboard',component:DashboardComponent},
   {path:'',redirectTo:'/login',pathMatch:'full'},
+  { path: 'private', loadChildren: () => import('./private/private.module').then(m => m.PrivateModule) },
   {path:'**',redirectTo:'/login'}
 ];
 
