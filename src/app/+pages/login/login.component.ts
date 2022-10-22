@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
     this.message='';
     let message=this.authService.check(this.username,this.password);
     if(message=='OK'){
-        this.router.navigateByUrl('/dashboard');
+        this.router.navigateByUrl('/private');
     }
     else{
       this.message=message;

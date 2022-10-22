@@ -9,7 +9,6 @@ import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
 import {FormsModule} from '@angular/forms';
-import { DashboardComponent } from './+pages/dashboard/dashboard.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -21,7 +20,6 @@ import { MatListModule } from '@angular/material/list';
   declarations: [
     AppComponent,
     LoginComponent,
-    DashboardComponent
   ],
   imports: [
     BrowserModule,
