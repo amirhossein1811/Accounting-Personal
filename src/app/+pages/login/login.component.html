@@ -8,21 +8,26 @@
     </mat-card-header>
     <img mat-card-image src="./../../../assets/images/accounts1.png" alt="Photo of Accounting">
     <mat-card-content>
+      <div>
       <mat-form-field class="example-full-width" appearance="fill">
         <mat-label>نام کاربری</mat-label>
-        <input matInput type="username" title="username">
+        <input [(ngModel)]="username" matInput type="username" title="username">
       </mat-form-field>
-      <mat-form-field class="example-full-width" appearance="fill">
-        <mat-label>کلمه عبور</mat-label>
-        <input matInput type="password" title="password">
-      </mat-form-field>
-
+      </div>
+      <div>
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>کلمه عبور</mat-label>
+          <input [(ngModel)]="password" matInput type="password" title="password">
+        </mat-form-field>
+      </div>
+<div *ngIf="message!=''" class="message">
+  {{message}}
+</div>
     </mat-card-content>
     <mat-card-actions>
-      <button color="accent" mat-raised-button>ورود</button>
-      <button color="accent" mat-raised-button>لغو</button>
+      <button (click)="check()" color="accent" mat-raised-button>ورود</button>
       <button color="accent" mat-raised-button>ثبت نام</button>
-      <button color="accent" mat-raised-button>فراموشی کلمه عبور</button>
+      <button color="accent" mat-button>فراموشی کلمه عبور</button>
     </mat-card-actions>
   </mat-card>
 

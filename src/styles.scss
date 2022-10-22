@@ -1,5 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
-
+@font-face {
+  font-family: Persain;
+  src: url("./assets/fonts/IRANSansWeb\(FaNum\).woff2");
+}
 html, body {
   height: 100%;
   direction: rtl;
@@ -9,4 +12,7 @@ body {
   margin: 0;
    font-family: Roboto, "Helvetica Neue", sans-serif;
     background-color: rgb(3, 70, 97) ;
+  }
+  *{
+    font-family: Persain;
   }
