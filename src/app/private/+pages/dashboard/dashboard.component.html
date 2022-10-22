@@ -5,8 +5,8 @@
       [opened]="(isHandset$ | async) === false">
     <mat-toolbar>داشبورد</mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item href="#">کاربران</a>
-      <a mat-list-item href="#">حساب ها</a>
+      <a mat-list-item [routerLink]="'users'">کاربران</a>
+      <a mat-list-item [routerLink]="'accounts'">حساب ها</a>
       <a mat-list-item href="#">تراکنش ها</a>
       <a mat-list-item href="#">فروش و درآمد</a>
       <a mat-list-item href="#">خرید و هزینه</a>
@@ -31,6 +31,8 @@
       </button>
       <span>سامانه حسابداری شخصی</span>
     </mat-toolbar>
-    <!-- Add Content Here -->
+    <div id="content">
+    <router-outlet></router-outlet>
+    </div>
   </mat-sidenav-content>
 </mat-sidenav-container>
