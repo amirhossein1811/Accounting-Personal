@@ -1,15 +1,22 @@
 <div>
+  <h2>{{title}}</h2>
   <table>
     <thead>
       <tr>
-        <th>شناسه</th>
-        <th>نام</th>
+        <th *ngFor="let col of columns">{{col.title}}</th>
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td>1</td>
-        <td>2</td>
+      <tr *ngFor="let row of data">
+        <td *ngFor="let col of columns">
+          <ng-container *ngIf="col.type=='check'">
+            <input title="check" disabled type="checkbox" [checked]="row[col.field]">
+          </ng-container>
+          <ng-container *ngIf="col.type!=='check'">
+            {{row[col.field]}}
+          </ng-container>
+        </td>
+
       </tr>
     </tbody>
   </table>

@@ -7,11 +7,17 @@ import { UsersService } from '../../+services/users.service';
   styleUrls: ['./users.component.scss']
 })
 export class UsersComponent implements OnInit {
-
-  constructor(private users:UsersService) { }
+cols=[
+  {field:'id',title:'شناسه'},
+  {field:'fullname',title:'نام'},
+  {field:'username',title:'نام کاربری'},
+  {field:'phone',title:'شماره همراه'},
+  {field:'enabled',title:'وضعیت',type:'check'}
+];
+  constructor(public users:UsersService) { }
 
   ngOnInit(): void {
-  
+
   }
 
 }

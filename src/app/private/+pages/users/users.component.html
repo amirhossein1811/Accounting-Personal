@@ -1,2 +1,10 @@
-<crud-toolbar></crud-toolbar>
-<data-grid></data-grid>
+<crud-toolbar
+  [updateEnabled]="true"
+  >
+</crud-toolbar>
+<data-grid
+  [title]="'فهرست کاربران'"
+  [data]="users.users"
+  [columns]="cols"
+  >
+</data-grid>

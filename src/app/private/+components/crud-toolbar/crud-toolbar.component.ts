@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'crud-toolbar',
@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./crud-toolbar.component.scss']
 })
 export class CrudToolbarComponent implements OnInit {
-
+@Input() updateEnabled:boolean=true;
   constructor() { }
 
   ngOnInit(): void {
