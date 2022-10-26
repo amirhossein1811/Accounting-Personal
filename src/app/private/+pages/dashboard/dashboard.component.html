@@ -1,35 +1,68 @@
 <mat-sidenav-container class="sidenav-container">
   <mat-sidenav #drawer class="sidenav" fixedInViewport
-      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
-      [mode]="(isHandset$ | async) ? 'over' : 'side'"
-      [opened]="(isHandset$ | async) === false">
-    <mat-toolbar>داشبورد</mat-toolbar>
-    <mat-nav-list>
+  [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+  [mode]="(isHandset$ | async) ? 'over' : 'side'"
+  [opened]="(isHandset$ | async) === false">
+  <mat-toolbar>داشبورد</mat-toolbar>
+  <mat-nav-list>
+    <mat-accordion>
+      <mat-expansion-panel (opened)="panelOpenState = true"
+      (closed)="panelOpenState = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          تمرین
+        </mat-panel-title>
+        <mat-panel-description>
+          <!..{{panelOpenState ? 'open' : 'closed'}}..>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
       <a mat-list-item [routerLink]="'users'">کاربران</a>
       <a mat-list-item [routerLink]="'accounts'">حساب ها</a>
-      <a mat-list-item href="#">تراکنش ها</a>
-      <a mat-list-item href="#">فروش و درآمد</a>
-      <a mat-list-item href="#">خرید و هزینه</a>
-      <a mat-list-item href="#">انبارداری</a>
-      <a mat-list-item href="#">حسابداری</a>
-      <a mat-list-item href="#">سایر</a>
-      <a mat-list-item href="#">گزارش ها</a>
-      <a mat-list-item href="#">تنظیمات</a>
-      <a mat-list-item href="#">ماشین حساب</a>
-      <a mat-list-item href="#">خروج</a>
-    </mat-nav-list>
+      <mat-expansion-panel (opened)="panelOpenState = true"
+      (closed)="panelOpenState = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          تراکنش
+        </mat-panel-title>
+        <mat-panel-description>
+          <!..{{panelOpenState ? 'open' : 'closed'}}..>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <a mat-list-item >پرداخت ها</a>
+      <a mat-list-item > دریافت ها</a>
+  </mat-expansion-panel>
+    </mat-expansion-panel>
+</mat-accordion>
+   <a mat-list-item href="#">تراکنش ها</a>
+    <a mat-list-item href="#">فروش و درآمد</a>
+    <a mat-list-item href="#">خرید و هزینه</a>
+    <a mat-list-item href="#">انبارداری</a>
+    <a mat-list-item href="#">حسابداری</a>
+    <a mat-list-item href="#">سایر</a>
+    <a mat-list-item href="#">گزارش ها</a>
+    <a mat-list-item href="#">تنظیمات</a>
+    <a mat-list-item href="#">ماشین حساب</a>
+    <a mat-list-item href="#">خروج</a>
+  </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
     <mat-toolbar color="primary">
       <button
-        type="button"
-        aria-label="Toggle sidenav"
-        mat-icon-button
-        (click)="drawer.toggle()"
-        *ngIf="isHandset$ | async">
-        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
-      </button>
-      <span>سامانه حسابداری شخصی</span>
+      type="button"
+      aria-label="Toggle sidenav"
+      mat-icon-button
+      (click)="drawer.toggle()"
+      *ngIf="isHandset$ | async">
+      <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+    </button>
+    <span>سامانه حسابداری شخصی</span>
+    <span class="example-spacer"></span>
+    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+      <mat-icon>favorite</mat-icon>
+    </button>
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+      <mat-icon>share</mat-icon>
+    </button>
     </mat-toolbar>
     <div id="content">
     <router-outlet></router-outlet>

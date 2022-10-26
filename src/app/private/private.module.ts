@@ -13,6 +13,8 @@ import { CrudToolbarComponent } from './+components/crud-toolbar/crud-toolbar.co
 import { DataGridComponent } from './+components/data-grid/data-grid.component';
 import { AccountsComponent } from './+pages/accounts/accounts.component';
 import { MatButtonModule } from '@angular/material/button';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatExpansionModule} from '@angular/material/expansion';
 
 
 @NgModule({
@@ -31,7 +33,9 @@ import { MatButtonModule } from '@angular/material/button';
     MatToolbarModule,
     MatIconModule,
     MatListModule,
-    MatButtonModule
+    MatButtonModule,
+    MatMenuModule,
+    MatExpansionModule
   ]
 })
 export class PrivateModule { }
